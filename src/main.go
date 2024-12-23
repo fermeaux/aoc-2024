@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"os"
+
+	"github.com/fermeaux/aoc-2024/solutions"
 )
 
 func main() {
@@ -22,5 +24,5 @@ func main() {
 
 	fmt.Println("Day: " + day + " | Part: " + part)
 
-	run(day, part)
+	solutions.Run(day, part)
 }

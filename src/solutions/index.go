@@ -1,15 +1,18 @@
 package solutions
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+	"path"
+	"runtime"
+)
 
 type Day struct {
 	Part1 func(string)
 	Part2 func(string)
 }
 
-type fn func(string)
-
-func run(day string, part string) {
+func Run(day string, part string) {
 	days := map[string]Day{
 		"01": getDay1(),
 	}
@@ -20,9 +23,16 @@ func run(day string, part string) {
 		return
 	}
 
+	_, filename, _, _ := runtime.Caller(1)
+	content, err := os.ReadFile(path.Join(path.Dir(filename), "../inputs/aoc-"+day+"/data.txt"))
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
 	if part == "1" {
-		tmp.Part1("")
-	} else {
-		tmp.Part2("")
+		tmp.Part1(string(content))
+	} else if part == "2" {
+		tmp.Part2(string(content))
 	}
 }
