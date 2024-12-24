@@ -15,6 +15,7 @@ type Day struct {
 func Run(day string, part string) {
 	days := map[string]Day{
 		"01": getDay1(),
+		"02": getDay2(),
 	}
 
 	tmp, ok := days[day]
@@ -29,6 +30,12 @@ func Run(day string, part string) {
 		fmt.Println(err)
 		return
 	}
+
+	// test, err := os.ReadFile(path.Join(path.Dir(filename), "../inputs/aoc-"+day+"/test.txt"))
+	// if err != nil {
+	// 	fmt.Println(err)
+	// 	return
+	// }
 
 	if part == "1" {
 		tmp.Part1(string(content))
