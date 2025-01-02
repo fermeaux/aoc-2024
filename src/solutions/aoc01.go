@@ -7,12 +7,14 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+
+	"github.com/fermeaux/aoc-2024/src/utils"
 )
 
 func getDay1() Day {
 	return Day{
 		Part1: func(input string) {
-			lines := strings.Split(input, "\n")
+			lines := ParseLines(input)
 			regex := regexp.MustCompile(`(\d+)\s+(\d+)`)
 			leftArray := []int{}
 			rightArray := []int{}

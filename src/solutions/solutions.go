@@ -14,7 +14,7 @@ type Day struct {
 
 func Run(day string, part string) {
 	days := map[string]Day{
-		"01": getDay1(),
+		// "01": getDay1(),
 		"02": getDay2(),
 	}
 

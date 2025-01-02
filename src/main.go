@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/fermeaux/aoc-2024/solutions"
+	"github.com/fermeaux/aoc-2024/src/solutions"
 )
 
 func main() {
